@@ -11,21 +11,20 @@ form.addEventListener("submit", (e) => {
 		return;
 	}
 
-	const prom = new Promise((resolve, reject) => {
-		if(parseInt(age, 10) > 18) {
+	const prom = new Promise((resolve) => {
+		if(parseInt(age, 10) >= 18) {
 			setTimeout(() => {
 				resolve(`Welcome, ${name}. You can vote`)
 			}, 4000)
 		} else{
 			setTimeout(() => {
-				reject(`Oh sorry ${name}. You aren't old enough`)
+				resolve(`Oh sorry ${name}. You aren't old enough`)
 			}, 4000)
 		}
 	})
 
 	prom
 		.then((data) => alert(data))
-		.catch((err) => alert(err))
 	
 	
 })
