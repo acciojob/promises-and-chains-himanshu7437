@@ -12,13 +12,13 @@ form.addEventListener("submit", (e) => {
 	}
 
 	const prom = new Promise((resolve, reject) => {
-		if(age > 18) {
+		if(parseInt(age, 10) > 18) {
 			setTimeout(() => {
-				resolve("Welcome, . You can vote")
+				resolve(`Welcome, ${name}. You can vote`)
 			}, 4000)
 		} else{
 			setTimeout(() => {
-				resolve("Oh sorry . You aren't old enough")
+				reject(`Oh sorry ${name}. You aren't old enough`)
 			}, 4000)
 		}
 	})
